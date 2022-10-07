@@ -33,3 +33,174 @@ Nastav je receptům jako obrázky na pozadí (tj. nepřidávej je jako <img> do 
 Na rozložení prvků NEPOUŽÍVEJ absolutní pozicování, ale pouze flexboxy.
 Flexboxy mohou být vnořené do sebe, klidně několikrát.
 */
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+}
+
+.kategorie, .komentar {
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.hlavni {
+	background: white url(images/salat.jpg) no-repeat top left/cover;
+	/* background-color: white;
+	background-image: url(images/salat.jpg);
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: cover; */
+	min-height: 200px;
+}
+
+.hlavni .nazev {
+	font-family: 'Raleway', sans-serif;
+	font-size: 28px;
+	font-weight: 800;
+}
+
+.maly1 .nazev, .maly2 .nazev, .maly3 .nazev, .maly4 .nazev {
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.maly1, .maly2, .maly3, .maly4 {
+	min-height: 90px;
+}
+
+.maly1 {
+	background: white url(images/chlebicek.jpg) no-repeat top left/cover;
+	/* background-color: white;
+	background-image: url(images/chlebicek.jpg);
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: cover; */
+}
+
+.maly2 {
+	background: white url(images/tacos.jpg) no-repeat top left/cover;
+	/* background-color: white;
+	background-image: url(images/tacos.jpg);
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: cover; */
+}
+
+.maly3 {
+	background: white url(images/cizrna.jpg) no-repeat top left/cover;
+	/* background-color: white;
+	background-image: url(images/cizrna.jpg);
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: cover; */
+}
+
+.maly4 {
+	background: white url(images/burger.jpg) no-repeat top left/cover;
+	/* background-color: white;
+	background-image: url(images/burger.jpg);
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: cover; */
+}
+
+.recept {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid white;
+}
+
+.horni {
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.spodni {
+	flex-grow: 0;
+}
+
+.kategorie {
+	flex-grow: 1;
+}
+
+.komentar {
+	flex: 0 0 auto;
+}
+
+@media screen and (min-width: 480px) {
+	.hlavni .nazev {
+		font-size: 36px;
+	}
+	
+	.maly1 .nazev, .maly2 .nazev, .maly3 .nazev, .maly4 .nazev {
+		font-size: 22px;
+	}
+
+	.hlavni {
+		flex: 1 0 auto;
+		min-height: 250px;
+	}
+	
+	.maly1, .maly2, .maly3, .maly4 {
+		min-height: 150px;
+		flex-basis: 50%;
+	}
+
+	.kontejner {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.pravy {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.maly1, .maly2, .maly3, .maly4 {
+		min-height: 150px;
+		flex-basis: 50%;
+	}
+
+	.recept {
+		padding: 20px;
+	}
+}
+
+@media screen and (min-width: 860px) {
+	.hlavni {
+		min-height: 400px;
+	}
+
+	.maly1, .maly2, .maly3, .maly4 {
+		min-height: 200px;
+	}
+	
+	.hlavni .nazev {
+		font-size: 48px;
+	}
+	
+	.maly1 .nazev, .maly2 .nazev, .maly3 .nazev, .maly4 .nazev {
+		font-size: 28px;
+	}
+
+	.kontejner {
+		flex-wrap: nowrap;
+	}
+
+	.hlavni {
+		flex: 0 0 calc(100% / 3);
+	}
+
+	.pravy {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.maly1, .maly2, .maly3, .maly4 {
+		flex: 0 0 calc(100% / 2);
+	}
+}
